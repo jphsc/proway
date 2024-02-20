@@ -1,0 +1,20 @@
+<section class="product__container">
+  <div class="product-image__container">
+    <img src="{{produto?.imagem}}" alt="">
+  </div>
+  <div class="product-description__container">
+    <h2 class="product__name">{{produto?.descricao}}</h2>
+    <h3 class="product__price">{{produto?.preco | currency: 'BRL' }}</h3>
+    <p>Estoque disponível: </p>
+    <label>
+      Quantidade:
+      <input type="number" [(ngModel)]="quantidade" min="1" (change)="obterQuantidadeEstoque(quantidade, produto?.id)">
+      unidade(s)
+    </label>
+    <p class="product__avaiability">
+      {{produto?.estoque}} unidade(s) em estoque
+    </p>
+    <button *ngIf="produto?.estoque !== 0" (click)="adicionarAoCarrinho()">Adicionar ao carrinho</button>
+    <div *ngIf="produto?.estoque == 0">Não temos este produto em estoque no momento</div>
+  </div>
+</section>
