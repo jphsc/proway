@@ -27,3 +27,8 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page. -->
 
 # Como gerar o build da aplicação
+
+1 - ng build --base-href="url_aplicacao"
+  Exemplo: ng build --base-href="https://jphsc.github.io/proway"
+2 - é possível especificar em qual diretória será gerado o build no arquivo angular.json > options > outputPath: "diretorio".
+  Também poderia adicionar no comando em 1 o valor "... output-path diretorio"
